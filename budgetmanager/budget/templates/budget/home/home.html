@@ -1,0 +1,15 @@
+{% extends 'budget/base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h3 class="col-auto">List of users in {{ user.account.home.name }}</h3>
+    {% if manage_users %}
+    <button class="btn btn-success col-auto ms-5" data-bs-toggle="modal" data-bs-target="#newUser">Add new user</button>
+    {% include 'budget/home/modals/new_user_modal.html' %}
+    {% endif %}
+    {% include 'budget/home/lists/home_users_list.html' %}
+</div>
+{% endblock %}
