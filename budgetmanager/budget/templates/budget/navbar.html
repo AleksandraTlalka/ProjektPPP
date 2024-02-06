@@ -25,7 +25,10 @@
                         {% if view_as %}*{% endif %}</a>
                 </li>
                 <li class="nav-item ms-5">
-                    <a class="btn btn-outline-danger nav-link" href="/logout">Logout</a>
+                    <form  action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button  class="btn btn-outline-danger nav-link" type="submit">Log out</button>
+                    </form>
                 </li>
                 {% endif %}
             </ul>
