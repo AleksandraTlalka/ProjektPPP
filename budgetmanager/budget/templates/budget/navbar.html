@@ -11,17 +11,17 @@
             <ul class="navbar-nav ms-auto">
                 {% if not user.is_authenticated %}
                 <li class="nav-item mx-1">
-                    <a class="btn btn-outline-primary nav-link" href="/new">Create a new home</a>
+                    <a class="btn btn-outline-secondary nav-link" href="/new">Create a new home</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="btn btn-outline-success nav-link" type="button" href="/login">Login</a>
+                    <a class="btn btn-outline-secondary nav-link" type="button" href="/login">Login to your home</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class=nav-link href='/home'>{{ user.account.home.name }}</a>
+                <li class="nav-item mx-2">
+                    <a class="btn nav-link btn-outline-secondary" href='/home'>Your home: {{ user.account.home.name }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class=nav-link href='/user'>{{ user.account.get_username }}
+                <li class="nav-item mx-2">
+                    <a class="btn nav-link btn-outline-secondary" href='/user'>{{ user.account.get_username }}
                         {% if view_as %}*{% endif %}</a>
                 </li>
                 <li class="nav-item ms-5">

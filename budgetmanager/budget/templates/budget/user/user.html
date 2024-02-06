@@ -4,10 +4,11 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
+<div class = "container" style="background-color: #d8f8f0; border-radius: 30px;"><!--#d4f4fc-->
 <div class="row mb-3">
-    <h3 class="col-auto">Hello, {{ user.account.get_username }}</h3>
-    <form method="POST" class="col-auto"> {% csrf_token %}
-        <button type="submit" class="btn btn-outline-primary" name="refresh"><svg xmlns="http://www.w3.org/2000/svg"
+    <h3 class="col-auto mt-3">Hello, {{ user.account.get_username }}</h3>
+    <form method="POST" class="col-auto mt-3"> {% csrf_token %}
+        <button type="submit" class="btn btn-outline-secondary" name="refresh"><svg xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
                 <path
@@ -24,7 +25,7 @@
         </div>
 
         <div class="col-auto">
-            <a href="user/labels" class="btn btn-outline-secondary">My labels</a>
+            <a href="user/labels" class="btn btn-secondary">My labels</a>
         </div>
 
     </div>
@@ -32,15 +33,15 @@
     <!--Recent operations header-->
     <div class="row mt-3">
         <div class="col-auto">
-            <h3>Recent operations:</h3>
+            <h3>Possible operations:</h3>
         </div>
         <div class="col-auto">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newOpModal">Add new</button>
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newOpModal">Add new</button>
         </div>
 
         {% if make_transactions %}
         <div class="col-auto">
-            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#transactionModal">Make
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#transactionModal">Make
                 transaction</button>
             {% include 'budget/user/modals/transaction_modal.html' %}
         </div>
@@ -58,7 +59,7 @@
     <!--Recent operations-->
     {% include 'budget/user/lists/recent_operations_list.html' %}
 
-    <a href='user/history' class="btn btn-outline-secondary row col-auto">More history</a>
+    <a href='user/history' class="btn btn-secondary row col-auto">More history</a>
 
     <div class="container">
         <!-- Vertical bar -->
@@ -73,6 +74,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {% include 'budget/user/charts.html' %}
 {% endblock %}
