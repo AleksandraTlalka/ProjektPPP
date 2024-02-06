@@ -4,9 +4,6 @@
 # Django framework
 django >= 4.0.1
 
-# Needed for PostgreSQL
-#psycopg2
-
 # For better looking html forms
 django-crispy-forms
 crispy-bootstrap5
