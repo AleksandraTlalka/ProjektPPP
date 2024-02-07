@@ -706,7 +706,6 @@ class Label(ConvenienceModel):
     """If the label is a default label."""
 
     _global_initialized = False
-    """TODO"""
 
     DEFAULT_LABELS = {
         'Food',
