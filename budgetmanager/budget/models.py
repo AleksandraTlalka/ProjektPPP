@@ -933,7 +933,6 @@ class OperationPlan(BaseOperation):
     """Next day that the new operation should be created."""
 
     def save(self, force_insert: bool = False, force_update: bool = False, using=None, update_fields=None):
-        """TODO"""
 
         if isinstance(self.next_date, datetime):
             self.next_date = self.next_date.date()
